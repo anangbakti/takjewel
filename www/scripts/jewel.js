@@ -4,6 +4,17 @@ var jewel =(function(){
         numResources = 0,
         executeRunning = false;
         
+    function showScreen(screenId){
+        var dom = jewel.dom,
+                $ = dom.$,
+                activeScreen = $("#game .screen.active")[0],
+                screen = $("#" + screenId)[0];
+        if (activeScreen){
+            dom.removeClass(activeScreen, "active");
+        }
+        dom.addClass(screen, "active");
+    }
+        
     function executeScriptQueue(){
         var next = scriptQueue[0],
                 first, script;
@@ -52,11 +63,12 @@ var jewel =(function(){
     }
     
     function setup(){
-        
+        console.log("Success!");
     }
     
     return{
         load: load,
-        setup: setup
+        setup: setup,
+        showScreen: showScreen
     };
 })();
