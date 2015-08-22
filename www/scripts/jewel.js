@@ -64,6 +64,7 @@ var jewel =(function(){
     
     function setup(){
         console.log("Success!");
+        jewel.showScreen("splash-screen");
     }
     
     return{
